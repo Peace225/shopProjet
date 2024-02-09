@@ -1,0 +1,37 @@
+ 
+ SoinsMédical
+ <div className='block blog-blog  justify-content-center align-items-center vh-100' style={{margin:100}}>
+            <div className='form_contrainer p-5  bg-success rounder'>
+                <div className='title-holder'>
+                    <h2>Laster from blog</h2>
+                    <div className='subtitle'>get our laster news from blog</div>
+
+                </div>
+                <div className='row'>
+                    {
+                        blogData.map(blog => {
+                            return (
+                                <Col sm={4} key={blog.id}>
+                                    <div className='holder'>
+                                        <Card >
+                                            <Card.Img variant="top" src={blog.image}/>
+                                            <Card.Body>
+                                                <time>{blog.time}</time>
+                                                <Card.Title>{blog.title}</Card.Title>
+                                                <Card.Text>
+                                                    {blog.description}
+                                                </Card.Text>
+                                                <a href={blog.link} className='btn btn-primary'>Read More <i class="fas fa-chevron-right"></i></a>
+                                            </Card.Body>
+
+                                        </Card>
+                                    </div>
+                                </Col>
+                            )
+                        })
+                    }
+                   
+                </div>
+
+            </div>
+        </div>
